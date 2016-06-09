@@ -1,9 +1,9 @@
 contract PegkeToken {
   
-  uint public totalTokens;
-  uint initialTokens;
+  uint256 public totalTokens;
+  uint256 initialTokens;
   
-  mapping (address => uint) balanceOf;
+  mapping (address => uint256) public balanceOf;
   
   function PegkeToken (){
     initialTokens = 10000;
