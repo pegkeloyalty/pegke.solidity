@@ -16,6 +16,7 @@ contract PegkeToken {
   }
   
  function sendToken(address reciever,uint256 tokenAmount) {
+     if (balanceOf[msg.sender] < tokenAmount) throw; 
      balanceOf[msg.sender] -= tokenAmount;
      balanceOf[reciever] += tokenAmount;
  }
