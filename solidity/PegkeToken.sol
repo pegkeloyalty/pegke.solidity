@@ -14,4 +14,9 @@ contract PegkeToken {
     tokenSymbol = "℗";
     balanceOf[msg.sender] = initialTokens; 
   }
+  
+ function sendToken(address reciever,uint256 tokenAmount) {
+     balanceOf[msg.sender] -= tokenAmount;
+     balanceOf[reciever] += tokenAmount;
+ }
 }
