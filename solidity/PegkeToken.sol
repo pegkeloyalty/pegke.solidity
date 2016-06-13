@@ -7,6 +7,8 @@ contract PegkeToken {
   
   mapping (address => uint256) public balanceOf;
   
+  event SendLog(address indexed_from, address indexed_to, uint256 value);
+  
   function PegkeToken (){
     initialTokens = 10000;
     totalTokens = initialTokens;
@@ -19,5 +21,6 @@ contract PegkeToken {
      if (balanceOf[msg.sender] < tokenAmount) throw; 
      balanceOf[msg.sender] -= tokenAmount;
      balanceOf[reciever] += tokenAmount;
+     SendLog(msg.sender, reciever, tokenAmount);
  }
 }
