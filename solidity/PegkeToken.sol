@@ -23,4 +23,8 @@ contract PegkeToken {
      balanceOf[reciever] += tokenAmount;
      SendLog(msg.sender, reciever, tokenAmount);
  }
+ 
+ function () {
+        throw;   
+ }
 }
