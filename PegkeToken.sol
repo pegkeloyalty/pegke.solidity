@@ -14,11 +14,11 @@ contract PegkeToken {
 		totalTokens = initialTokens;
 		tokenName = "PegkeCoin";
 		tokenSymbol = "℗";
-		balanceOf[msg.sender] = initialTokens; 
+		balanceOf[msg.sender] = initialTokens;
 	}
 
 	function sendToken(address reciever,uint256 tokenAmount) {
-		if (balanceOf[msg.sender] < tokenAmount) throw; 
+		if (balanceOf[msg.sender] < tokenAmount) throw;
 		balanceOf[msg.sender] -= tokenAmount;
 		balanceOf[reciever] += tokenAmount;
 		SendLog(msg.sender, reciever, tokenAmount);
@@ -30,6 +30,6 @@ contract PegkeToken {
 	}
 
 	function () {
-	    throw;   
+	    throw;
 	}
 }
